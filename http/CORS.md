@@ -8,7 +8,7 @@
 
 ```html
 Access-Control-Allow-Origin: <origin> | *
-```
+**```**
 
 origin 参数的值指定了允许访问该资源的外域 URI。对于不需要携带身份凭证的请求，服务器可以指定该字段的值为通配符，表示允许来自所有域的请求
 
