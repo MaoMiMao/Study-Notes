@@ -1,0 +1,36 @@
+## 提供restFul服务
+### 相关注解
+
+* @Path
+  * 标注class时，表明该类是个资源类，凡是资源类必须使用该注解
+  * 标注method时，表示具体的请求资源的路径
+* @GET\@POST\@PUT\@DELETE
+  * 指明接收HTTP请求的方式属于get,post,put,delete中的哪一种，具体指定请求方式，是由客户端发起请求时指定
+* @Consumes
+  * 指定HTTP请求的MIME类型，默认是*/*，表示任意的MIME类型。该注解支持多个值设定，可以使用MediaType来指定MIME类型。
+* @Produces
+  * 指定HTTP响应的MIME类型，默认是*/*，表示任意的MIME类型。同Consumes使用MediaType来指定MIME类型。
+* @PathParam
+  * 配合@Path进行使用，可以获取URI中指定规则的参数。
+* @QueryParam
+  * 用于获取GET请求中的查询参数，实际上是url拼接在?后面的参数。
+* @FormParam
+  * 用于获取POST请求且以form(MIME类型为application/x-www-form-urlencoded)方式提交的表单的参数。
+* @FormDataParam
+  * 用于获取POST请求且以form(MIME类型为multipart/form-data)方式提交的表单的参数，通常是在上传文件的时候。
+* @HeaderParam
+  * 用于获取HTTP请求头中的参数值
+* @CookieParam
+  * 用于获取HTTP请求cookie中的参数值。
+* @MaxtrixParam
+  * 可以用来绑定包含多个property (属性)=value(值) 方法参数表达式，用于获取请求URL参数中的键值对，必须使用";"作为键值对分隔符。
+* @DefaultValue
+  * 配合前面的参数注解等使用，用来设置默认值，如果请求指定的参数中没有值，通过该注解给定默认值。
+* @BeanParam
+  * 如果传递的较多，使用@FormParam等参数注解一个一个的接收每个参数可能显得太臃肿，可以通过Bean方式接收自定义的Bean，在自定义的Bean中字段使用@FormParam等参数注解。只需定义一个参数接收即可。
+* @Context
+  * 用来用来解析上下文参数，和Spring中的AutoWired效果类似。通过该注解可以获取ServletConfig、ServletContext、HttpServletRequest、HttpServletResponse和HttpHeaders等信息。
+* @Encoded
+  * 禁止解码，客户端发送的参数是什么样，服务器就原样接收
+* @XmlRootElement
+  * 如果要将bean以xml或json的格式返回，必须要这个注解
